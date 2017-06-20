@@ -11786,7 +11786,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[63]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="nx">javascript</span>
@@ -11810,10 +11810,10 @@ div#notebook {
 
 
 
-<div id="07e39e14-b26a-4856-9422-0dc9b8f559a5"></div>
+<div id="158e98a6-6196-4abc-8dcc-14eeae9d5b29"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#07e39e14-b26a-4856-9422-0dc9b8f559a5');
+var element = $('#158e98a6-6196-4abc-8dcc-14eeae9d5b29');
 /* JavaScript plugin that generates a Table of Contents */
 $.getScript('https://kmahelona.github.io/ipython_notebook_goodies/ipython_notebook_toc.js')
 </script>
@@ -11835,10 +11835,12 @@ $.getScript('https://kmahelona.github.io/ipython_notebook_goodies/ipython_notebo
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[64]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Import some useful packages</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### CELL 1 ###</span>
+
+<span class="c1"># Import some useful packages</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">cv2</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -11923,10 +11925,12 @@ $.getScript('https://kmahelona.github.io/ipython_notebook_goodies/ipython_notebo
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[65]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># number of rows and cols on the checkerboard</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### CELL 2 ###</span>
+
+<span class="c1"># number of rows and cols on the checkerboard</span>
 <span class="n">cal_rows</span> <span class="o">=</span> <span class="mi">6</span>
 <span class="n">cal_cols</span> <span class="o">=</span> <span class="mi">9</span>
 
@@ -14572,10 +14576,12 @@ kiRJkiTZEf4fnF9WZVwZLDUAAAAASUVORK5CYII=
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[66]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Test undistortion on an image</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### CELL 3 ###</span>
+
+<span class="c1"># Test undistortion on an image</span>
 <span class="n">cal_test_image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">CAL_TEST_IMAGE</span><span class="p">)</span>
 <span class="n">cal_test_image_size</span> <span class="o">=</span> <span class="p">(</span><span class="n">cal_test_image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">cal_test_image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 
@@ -14603,10 +14609,12 @@ kiRJkiTZEf4fnF9WZVwZLDUAAAAASUVORK5CYII=
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[67]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># restore the calibration pickle</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### CELL 4 ###</span>
+
+<span class="c1"># restore the calibration pickle</span>
 <span class="n">CAL_PICKLE</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span> <span class="n">CAL_PICKLE_FILE</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span> <span class="p">))</span>
 
 <span class="c1"># image to do undistortion on an image using the calibration pickle</span>
@@ -14640,13 +14648,13 @@ kiRJkiTZEf4fnF9WZVwZLDUAAAAASUVORK5CYII=
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[67]:</div>
+<div class="prompt output_prompt">Out[5]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.text.Text at 0x7f90f76645f8&gt;</pre>
+<pre>&lt;matplotlib.text.Text at 0x7fbe7bacfba8&gt;</pre>
 </div>
 
 </div>
@@ -20225,10 +20233,12 @@ hoaGhoaGhoaGhobnGP8/ymYAaApc1vkAAAAASUVORK5CYII=
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[68]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Show undistortion on a &#39;real&#39; image</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### CELL 5 ###</span>
+
+<span class="c1"># Show undistortion on a &#39;real&#39; image</span>
 <span class="n">figure</span><span class="p">,</span> <span class="n">plots</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
 <span class="n">unwarp_test_image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">UNWARP_TEST_IMAGE</span><span class="p">)</span>
 <span class="n">plots</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">unwarp_test_image</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2RGB</span><span class="p">))</span>
@@ -20247,13 +20257,13 @@ hoaGhoaGhoaGhobnGP8/ymYAaApc1vkAAAAASUVORK5CYII=
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[68]:</div>
+<div class="prompt output_prompt">Out[6]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.text.Text at 0x7f90f7ac10b8&gt;</pre>
+<pre>&lt;matplotlib.text.Text at 0x7fbe7ba2c048&gt;</pre>
 </div>
 
 </div>
@@ -27781,7 +27791,7 @@ ifGvAYBK6L+gAfDyAAAAAElFTkSuQmCC
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Task #4:</strong> Perform a perspective transform and provide an example of a transformed image.</p>
+<p><strong>Task #3:</strong> Perform a perspective transform and provide an example of a transformed image.</p>
 <p>OpenCV function or other method has been used to correctly rectify each image to a "birds-eye view". Transformed images should be included in the writeup (or saved to a folder) and submitted with the project</p>
 
 </div>
@@ -27789,10 +27799,12 @@ ifGvAYBK6L+gAfDyAAAAAElFTkSuQmCC
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[69]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">show_lane_plane</span><span class="p">(</span><span class="n">image</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### CELL 6 ###</span>
+
+<span class="k">def</span> <span class="nf">show_lane_plane</span><span class="p">(</span><span class="n">image</span><span class="p">):</span>
     <span class="k">global</span> <span class="n">UNWARP_PLANE</span>
     <span class="n">undistorted</span> <span class="o">=</span> <span class="n">undistort</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
     <span class="n">color</span> <span class="o">=</span> <span class="p">[</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
@@ -27839,13 +27851,13 @@ ifGvAYBK6L+gAfDyAAAAAElFTkSuQmCC
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[69]:</div>
+<div class="prompt output_prompt">Out[7]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.text.Text at 0x7f90f7dc83c8&gt;</pre>
+<pre>&lt;matplotlib.text.Text at 0x7fbe7b9110b8&gt;</pre>
 </div>
 
 </div>
@@ -34150,7 +34162,7 @@ uMJYcMgwDMMwDMMwDMMwDOMK8/8BLqFIb4NcrvkAAAAASUVORK5CYII=
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Task #5:</strong> Use color transforms, gradients or other methods to create a thresholded binary image. Provide an example of a binary image result.</p>
+<p><strong>Task #4:</strong> Use color transforms, gradients or other methods to create a thresholded binary image. Provide an example of a binary image result.</p>
 <p>A method or combination of methods (i.e., color transforms, gradients) has been used to create a binary image containing likely lane pixels. There is no "ground truth" here, just visual verification that the pixels identified as part of the lane lines are, in fact, part of the lines. Example binary images should be included in the writeup (or saved to a folder) and submitted with the project.</p>
 
 </div>
@@ -34166,10 +34178,12 @@ uMJYcMgwDMMwDMMwDMMwDOMK8/8BLqFIb4NcrvkAAAAASUVORK5CYII=
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[70]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># applies Sobel x and y, then computes the magnitude of the gradient and applies a threshold</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### CELL 7 ###</span>
+
+<span class="c1"># applies Sobel x and y, then computes the magnitude of the gradient and applies a threshold</span>
 <span class="c1"># DEPRECATED / not used</span>
 <span class="k">def</span> <span class="nf">mag_threshold</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">sobel_kernel</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">mag_thresh</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">),</span> <span class="n">doUnwarp</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
     <span class="c1"># unwarp if not already done (doUnwarp == False)</span>
@@ -34298,13 +34312,13 @@ uMJYcMgwDMMwDMMwDMMwDOMK8/8BLqFIb4NcrvkAAAAASUVORK5CYII=
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[70]:</div>
+<div class="prompt output_prompt">Out[8]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.text.Text at 0x7f90f768dd30&gt;</pre>
+<pre>&lt;matplotlib.text.Text at 0x7fbe74640668&gt;</pre>
 </div>
 
 </div>
@@ -35445,10 +35459,12 @@ kCRJkiRJI5k8kCRJkiRJI5k8kCRJkiRJI5k8kCRJkiRJI/1//jg+UIb0nnsAAAAASUVORK5CYII=
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[71]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># returns a 6-channel image with all the thresholds</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### CELL 8 ###</span>
+
+<span class="c1"># returns a 6-channel image with all the thresholds</span>
 <span class="c1"># (magintude &amp; directional sobel, l-threshold, s-threshold, yellow &amp; white mask)</span>
 <span class="k">def</span> <span class="nf">combined_threshold</span><span class="p">(</span><span class="n">image</span><span class="p">):</span>
     <span class="k">global</span> <span class="n">THRESH_MAG</span>
@@ -35505,13 +35521,13 @@ kCRJkiRJI5k8kCRJkiRJI5k8kCRJkiRJI5k8kCRJkiRJI/1//jg+UIb0nnsAAAAASUVORK5CYII=
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[71]:</div>
+<div class="prompt output_prompt">Out[9]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.text.Text at 0x7f91180870b8&gt;</pre>
+<pre>&lt;matplotlib.text.Text at 0x7fbe744f0128&gt;</pre>
 </div>
 
 </div>
@@ -39037,7 +39053,7 @@ IrIFkwIAAAAASUVORK5CYII=
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Task #6:</strong> Identify lane-line pixels and fit their positions with a polynomial?</p>
+<p><strong>Task #5:</strong> Identify lane-line pixels and fit their positions with a polynomial?</p>
 <p>Methods have been used to identify lane line pixels in the rectified binary image. The left and right line have been identified and fit with a curved functional form (e.g., spine or polynomial). Example images with line pixels identified and a fit overplotted should be included in the writeup (or saved to a folder) and submitted with the project.</p>
 
 </div>
@@ -39053,10 +39069,12 @@ IrIFkwIAAAAASUVORK5CYII=
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[72]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># return the histogram of the summed up whiteness across the y-axis of the lower half of the image</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### CELL 9 ###</span>
+
+<span class="c1"># return the histogram of the summed up whiteness across the y-axis of the lower half of the image</span>
 <span class="k">def</span> <span class="nf">whiteness_half_across_y</span><span class="p">(</span><span class="n">image</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">image</span><span class="p">[</span><span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">//</span><span class="mi">2</span><span class="p">:,:],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
@@ -40049,10 +40067,12 @@ RERERERGUcJIRERERERERERGUcJIRERERERERERG+f9hVGmdzW9dZQAAAABJRU5ErkJggg==
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[73]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Class representing a lane line as collection of points on an image</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### CELL 10 ###</span>
+
+<span class="c1"># Class representing a lane line as collection of points on an image</span>
 <span class="k">class</span> <span class="nc">LaneLine</span><span class="p">:</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">xs</span> <span class="o">=</span> <span class="n">xs</span>
@@ -40107,10 +40127,12 @@ RERERERGUcJIRERERERERERGUcJIRERERERERERG+f9hVGmdzW9dZQAAAABJRU5ErkJggg==
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[74]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Class representing a Lane as a right + left lane line</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### CELL 11 ###</span>
+
+<span class="c1"># Class representing a Lane as a right + left lane line</span>
 <span class="k">class</span> <span class="nc">Lane</span><span class="p">:</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">left_line</span><span class="p">,</span> <span class="n">right_line</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="n">left_line</span>
@@ -40169,10 +40191,12 @@ RERERERGUcJIRERERERERERGUcJIRERERERERERG+f9hVGmdzW9dZQAAAABJRU5ErkJggg==
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[75]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># nwindows = number of sliding windows</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### CELL 12 ###</span>
+
+<span class="c1"># nwindows = number of sliding windows</span>
 <span class="c1"># wmargin = Set the width of the windows +/- margin</span>
 <span class="c1"># minpix = minimum number of pixels found to recenter window</span>
 <span class="c1"># giveupafter = give up lane tracing after not finding minpix number of pixels for a number of sliding windows</span>
@@ -40927,10 +40951,12 @@ I0mSJEmSNFAWdiRJkiRJkgbKwo4kSZIkSdJA/W//v5FkpI5L9wAAAABJRU5ErkJggg==
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[76]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Search in proximity of pmargin pixels around old_lane for lane lines in an image</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### CELL 13 ###</span>
+
+<span class="c1"># Search in proximity of pmargin pixels around old_lane for lane lines in an image</span>
 <span class="k">def</span> <span class="nf">proximity_search</span><span class="p">(</span><span class="n">old_lane</span><span class="p">,</span> <span class="n">image</span><span class="p">,</span> <span class="n">pmargin</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
     <span class="c1"># Find lane line pixels (binary image)</span>
     <span class="n">lane_line_img</span> <span class="o">=</span> <span class="n">find_lane_line_pixels</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
@@ -41649,10 +41675,12 @@ oCzsSJIkSZIkDdT/DwCyTz90fkAXAAAAAElFTkSuQmCC
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[77]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Combine both search strategies (proximity + slidewindow) taking into consideration </span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### CELL 14 ###</span>
+
+<span class="c1"># Combine both search strategies (proximity + slidewindow) taking into consideration </span>
 <span class="c1"># old_lane lane details</span>
 <span class="k">def</span> <span class="nf">combined_search</span><span class="p">(</span><span class="n">old_lane</span><span class="p">,</span> <span class="n">image</span><span class="p">):</span>
     <span class="c1"># do slidewindow search</span>
@@ -42403,10 +42431,12 @@ diTp/2/HDkgAAAAABP1/3Y5AZwgAADAldgAAAACmAkcY9I47uAMaAAAAAElFTkSuQmCC
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[78]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Plot a lane onto an (preferably empty) image</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### CELL 15 ###</span>
+
+<span class="c1"># Plot a lane onto an (preferably empty) image</span>
 <span class="k">def</span> <span class="nf">plot_lane</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">lane</span><span class="p">,</span> <span class="n">laneColor</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">lane</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="c1"># sample left and right lane line polygon</span>
@@ -42991,7 +43021,7 @@ JEmSJKllRv1TLEmSJEmSJC2ShR1JkiRJkqSWsrAjSZIkSZLUUhZ2JEmSJEmSWsrCjiRJkiRJUktZ
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Task #7:</strong> Calculate the radius of curvature of the lane and the position of the vehicle with respect to center.</p>
+<p><strong>Task #6:</strong> Calculate the radius of curvature of the lane and the position of the vehicle with respect to center.</p>
 <p>Here the idea is to take the measurements of where the lane lines are and estimate how much the road is curving and where the vehicle is located with respect to the center of the lane. The radius of curvature may be given in meters assuming the curve of the road follows a circle. For the position of the vehicle, you may assume the camera is mounted at the center of the car and the deviation of the midpoint of the lane from the center of the image is the offset you're looking for. As with the polynomial fitting, convert from pixels to meters.</p>
 
 </div>
@@ -43001,7 +43031,7 @@ JEmSJKllRv1TLEmSJEmSJC2ShR1JkiRJkqSWsrAjSZIkSZLUUhZ2JEmSJEmSWsrCjiRJkiRJUktZ
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Task #8:</strong> Plot result back down onto the road such that the lane area is identified clearly.</p>
+<p><strong>Task #7:</strong> Plot result back down onto the road such that the lane area is identified clearly.</p>
 <p>The fit from the rectified image has been warped back onto the original image and plotted to identify the lane boundaries. This should demonstrate that the lane boundaries were correctly identified. An example image with lanes, curvature, and position from center should be included in the writeup (or saved to a folder) and submitted with the project.</p>
 
 </div>
@@ -43009,10 +43039,12 @@ JEmSJKllRv1TLEmSJEmSJC2ShR1JkiRJkqSWsrAjSZIkSZLUUhZ2JEmSJEmSWsrCjiRJkiRJUktZ
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[79]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Plot Lane metrics onto image</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### CELL 16 ###</span>
+
+<span class="c1"># Plot Lane metrics onto image</span>
 <span class="k">def</span> <span class="nf">plot_metrics</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">lane</span><span class="p">,</span> <span class="n">textColor</span><span class="o">=</span><span class="p">(</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">)):</span>
     <span class="c1"># Plot lane curvature and offset onto image</span>
     <span class="k">if</span> <span class="n">lane</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
@@ -55239,10 +55271,12 @@ JpPJZDKZTCaTyWQymS3l/wK2pcK1lyZSWQAAAABJRU5ErkJggg==
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[80]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">moviepy.editor</span> <span class="k">import</span> <span class="n">VideoFileClip</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### CELL 17 ###</span>
+
+<span class="kn">from</span> <span class="nn">moviepy.editor</span> <span class="k">import</span> <span class="n">VideoFileClip</span>
 <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">HTML</span>
 
 <span class="c1"># needed to store the old_lane since clip.fl_image(...) only takes </span>
@@ -55272,10 +55306,12 @@ JpPJZDKZTCaTyWQymS3l/wK2pcK1lyZSWQAAAABJRU5ErkJggg==
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[81]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Process the whole video (this takes about 15mins on a MS Azure 8core+GPU Data Science machine!)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### CELL 18 ###</span>
+
+<span class="c1"># Process the whole video (this takes about 15mins on a MS Azure 8core+GPU Data Science machine!)</span>
 <span class="n">process_video</span><span class="p">(</span><span class="s2">&quot;project_video.mp4&quot;</span><span class="p">,</span> <span class="s2">&quot;project_video_output.mp4&quot;</span><span class="p">)</span>
 </pre></div>
 
@@ -55305,7 +55341,7 @@ JpPJZDKZTCaTyWQymS3l/wK2pcK1lyZSWQAAAABJRU5ErkJggg==
 
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>100%|█████████▉| 1260/1261 [15:47&lt;00:00,  1.32it/s]
+<pre>100%|█████████▉| 1260/1261 [15:43&lt;00:00,  1.32it/s]
 </pre>
 </div>
 </div>
@@ -55329,10 +55365,12 @@ JpPJZDKZTCaTyWQymS3l/wK2pcK1lyZSWQAAAABJRU5ErkJggg==
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[83]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Output the video</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### CELL 19 ###</span>
+
+<span class="c1"># Output the video</span>
 <span class="n">HTML</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
 <span class="s2">&lt;video width=&quot;960&quot; height=&quot;540&quot; controls&gt;</span>
 <span class="s2">  &lt;source src=&quot;</span><span class="si">{0}</span><span class="s2">&quot;&gt;</span>
@@ -55350,7 +55388,7 @@ JpPJZDKZTCaTyWQymS3l/wK2pcK1lyZSWQAAAABJRU5ErkJggg==
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[83]:</div>
+<div class="prompt output_prompt">Out[20]:</div>
 
 
 
