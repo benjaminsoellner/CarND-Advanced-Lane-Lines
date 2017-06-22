@@ -22,6 +22,6 @@ The goals / steps of this project are the following:
 
 My project includes the following files:
 
-* [```CarND 04 Advanced Lane Line Detection.ipynb```](CarND+04+Advanced+Lane+Line+Detection.ipynb) / [```.html```](CarND+04+Advanced+Lane+Line+Detection.html): the (rendered) iPython notebook with the algorithm
+* [```CarND 04 Advanced Lane Line Detection.ipynb```](CarND%2004%20Advanced%20Lane%20Line%20Detection.ipynb) / [```.html```](CarND%2004%20Advanced%20Lane%20Line%20Detection.html): the (rendered) iPython notebook with the algorithm
 * [```writeup_report.md```](writeup_report.md) / [```.html```](writeup_report.html): the writeup of this project including the showcase images (you are reading it)
 * [```project_video_output.mp4```](project_video_output.mp4): the output video with lane line markings and lane metrics
