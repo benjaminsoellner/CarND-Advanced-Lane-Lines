@@ -1,5 +1,5 @@
 # Self Driving Car Engineer Project 4 - Advanced Lane Line Detection
-## Benjamin Söllner, 22 Jun 2017
+## Benjamin Söllner, 25 Jun 2017
 
 ---
 
@@ -96,7 +96,7 @@ In order to find the lower bounds where to start the slidewindow search, the agg
 
 ![](writeup_images/task_5_find_lane_line_base.png)
 
-The vertical space of the image is divided into 9 sliding windows which follow the lane line progression from bottom of the image to the top. The lane line pixels are collected from the binary image retrieved by ```find_lane_line_pixels(...)``` across the sliding windows (see CELL 12, line 41 and 57)
+The vertical space of the image is divided into 7 sliding windows which follow the lane line progression from bottom of the image to the top. The lane line pixels are collected from the binary image retrieved by ```find_lane_line_pixels(...)``` across the sliding windows (see CELL 12, line 41 and 57)
 
 ```python
 w_left_idxs = ((nonzeroy >= w_y_lo) & (nonzeroy < w_y_hi) & (nonzerox >= w_xleft_lo) & (nonzerox < w_xleft_hi)).nonzero()[0]
@@ -120,7 +120,7 @@ for w in range(nwindows):
             giveup_left += 1
 ```
 
-After the slidewindow search a second-order polynomial is fit through the points that had been found (CELL 12, lines 85ff., for the ```LaneLine.sample_poly(...)``` function, see CELL 10, lines 19f.):
+After the slidewindow search a second-order polynomial is fit through the points that had been found (CELL 12, lines 19ff., for the ```LaneLine.sample_poly(...)``` function, see CELL 10, lines 19f.):
 
 ```python
 left_fit_xs = left_line.sample_poly(fit_ys)
@@ -155,9 +155,20 @@ In the following image, you can see how the proximity search works (for this exa
 
 Both strategies (```slidewindow_search(...)``` and ```proximity_search(...)```) are combined (```combined_search(...)```, CELL 14). The following strategies are used to trade off both strategies and sanity-check both of them:
 
-* If either of the two methods do not find a lane (because the left or right lane does not contain lane line pixels), the other strategy is used.
+* Lanes are sanity checked with the ```Lane.would_be_dangerous(...)``` function. This function caculates if the lane at its base is between 3.7m and 4.3m, whether the "sanity" of the lane (the difference between its highest and lowest width) is smaller than 0.5m (CELL 11, lines, 46ff.):
+  ```python
+# Another sanity check to tell us whether the line would be too wide or too narrow
+def would_be_dangerous(self, ys):
+    x_l = self.left.sample_poly(ys[-1])
+    x_r = self.right.sample_poly(ys[-1])
+    c_l = self.left.curvature(ys[-1])
+    c_r = self.right.curvature(ys[-1])
+    d = abs(x_l-x_r)*LANE_X_M_PER_PIX
+    return ((d<3.7) or (d>4.3) or self.insanity(ys)>0.5)
+```
+* If either of the two methods do not find a lane (because the left or right lane does not contain lane line pixels or because the lane "would be dangerous"), the other strategy is used.
 * If no previous image & lane was provided, the slidewindow search will be used.
-* If a previous image & lane was provided, this lane is averaged with the newly found lane (CELL 14 line 19+24, the "+" and "/" operator is overloaded in the "Lane" and "LaneLine" class, see CELL 10 and 11):
+* If a previous image & lane was provided, this lane is averaged with the newly found lane (CELL 14 line 19+24, the "+" and "/" operator is overloaded in the "Lane" and "LaneLine" class, see CELL 20 and 32):
 
   ```python
 slidewindow_lane_avg = (old_lane + slidewindow_lane)/2
@@ -166,13 +177,13 @@ slidewindow_lane_avg = (old_lane + slidewindow_lane)/2
 proximity_lane_avg = (old_lane + proximity_lane)/2
 ```
 
-* If both searches return results, the lane with the lowest "insanity" is used. As metric for "insanity" the standard deviation of the lane line width across the image is used (see CELL 14 line 26ff. and CELL 11 lines 15ff.):
+* If both searches return results, the lane with the lowest "insanity" is used. As metric for "insanity"  the difference between its highest and lowest width is used (see CELL 14 line 37ff.):
 
   ```python
+proximity_insanity = proximity_lane_avg.insanity(ys)
+slidewindow_insanity = slidewindow_lane_avg.insanity(ys)
 if (proximity_insanity < slidewindow_insanity):
     next_lane = proximity_lane_avg
-else:
-    next_lane = slidewindow_lane_avg
 ```
   ```python
 # "Insanity" of a lane is high in case the lane width varies a lot
@@ -191,7 +202,7 @@ def insanity(self, ys):
 
 ### Task #6: Calculate the radius of curvature of the lane and the position of the vehicle with respect to center.
 
-In the code's ```Lane``` class, there are two functions to calculate the lane radius and current offset-from-center (CELL 11, 9ff. and 27ff.):
+In the code's ```Lane``` class, there are two functions to calculate the lane radius and current offset-from-center (CELL 11, 9ff. and 25ff.):
 
 ```python
 # Curvature of a lane is defined as average curvature of the left + right lane line
@@ -206,7 +217,7 @@ def offset_from_center(self, y, x_vehicle_center):
     global LANE_X_M_PER_PIX
     x_l = self.left.sample_poly(y)
     x_r = self.right.sample_poly(y)
-    x_lane_center = (x_r-x_l)/2
+    x_lane_center = (x_r+x_l)/2
     return (x_lane_center-x_vehicle_center)*LANE_X_M_PER_PIX
 ```
 
